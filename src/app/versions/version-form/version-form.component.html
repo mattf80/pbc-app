@@ -1,3 +1,36 @@
 <div class="col-md-6 offset-md-3 text-center">
-  <h1>An amazing form!</h1>
+  <h4>Add version</h4>
+  <form novalidate [formGroup]="versionForm" (ngSubmit)="save(versionForm)">
+    <div class="form-group row">
+      <label for="exam" class="col-4 col-form-label">Exam</label>
+      <div class="col-6">
+        <select name="exam" id="exam" class="form-control">
+          <option *ngFor="let exam of exams">{{exam.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="examComponent" class="col-4 col-form-label">Component</label>
+      <div class="col-6">
+        <select name="examComponent" id="examComponent" class="form-control" (change)="onExamComponentChange($event.target.value)">
+          <option *ngFor="let comp of components"[value]="comp.id">{{comp.name}}</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="form-group row">
+      <label for="versionName" class="col-4 col-form-label">Version name</label>
+      <div class="col-6">
+        <input class="form-control" type="text" id="versionName" formControlName="versionName">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="isCurrent" class="col-4 col-form-label">Is current</label>
+      <div class="col-6">
+        <input type="checkbox" id="isCurrent" formControlName="isCurrent">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!versionForm.valid">Save</button>
+  </form>
 </div>

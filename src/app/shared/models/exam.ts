@@ -2,7 +2,7 @@
 export interface Exam {
     id: number;
     name: string;
-    examComponents: ExamComponent[]
+    //examComponents: ExamComponent[]
 }
 
 export interface ExamComponent {
