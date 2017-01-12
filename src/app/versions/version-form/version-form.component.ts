@@ -1,3 +1,4 @@
+import { PbVersion } from './../../shared/models/pb-version';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormArray, FormBuilder } from '@angular/forms';
 import { Exam } from './../../shared/models/exam';
@@ -16,6 +17,8 @@ export class VersionFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  save(model: Version)
+  save(model: PbVersion) {
+    
+  }
 
 }
